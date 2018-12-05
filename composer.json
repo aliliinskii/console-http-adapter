@@ -1,0 +1,20 @@
+{
+	"name" : "ai/console-http-adapter",
+	"description" : "Adapt Symfony console component to web application",
+	"type" : "library",
+	"require" : {
+		"php": ">=7.1",
+		"sensiolabs/ansi-to-html" : "~1.1"
+	},
+	"require-dev": {
+		"symfony/console" : "~3.4 || ~4"
+	},
+	"autoload" : {
+		"psr-4" : {
+			"ConsoleHttpAdapter\\" : "src/"
+		}
+	},
+	"conflict": {
+		"symfony/console": "<3.0 || >=5.0"
+	}
+}
