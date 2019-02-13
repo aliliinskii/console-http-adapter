@@ -134,12 +134,14 @@ class ConsoleHttpAdapter
     public function runApplication(Application $application, InputInterface $input, OutputInterface $output = null)
     {
         $output = $this->configureOutput($output ?? $this->createDefaultOutput(), $input);
+        $autoExit = $application->isAutoExitEnabled();
         $application->setAutoExit(false);
         $this->startOutput($output);
         try {
             $application->run($input, $output);
         } finally {
             $this->closeOutput($output);
+            $application->setAutoExit($autoExit);
         }
     }
 
