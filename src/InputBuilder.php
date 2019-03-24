@@ -12,12 +12,10 @@ class InputBuilder
      * <pre>
      * Arguments are meant to be recieved via URL segments.
      * Query string is used to fill command options.
-     * Query string is recieved either from $_SERVER['QUERY_STRING] or Psr\Http\Message\UriInterface::getQuery().
+     * Query string is recieved either from $_SERVER['QUERY_STRING]
+     * or \Psr\Http\Message\UriInterface::getQuery().
      * To pass a boolean option, value should be ommitted.
      * </pre>
-     * @param array $args
-     * @param string $query
-     * @return InputInterface
      * @example
      * /entry-point/command-name/arg1/arg2?--no-value&--value=1
      * resolves to arguments [command-name, arg1, arg2] and options [--no-value => true, --value => 1]
